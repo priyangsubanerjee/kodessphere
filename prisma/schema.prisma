@@ -26,3 +26,13 @@ model Team {
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
+
+model Sub1 {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  teamName  String
+  teamPid   String   @unique
+  content   String?
+  arena     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
