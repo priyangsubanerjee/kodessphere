@@ -44,3 +44,11 @@ model Verification {
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
 }
+
+model Playground{
+    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    teamPid   String
+    devices   Json?
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
