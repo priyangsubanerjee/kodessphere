@@ -40,7 +40,7 @@ function Form() {
       const docSnap = await getDoc(docRef);
       if (!docSnap.exists()) {
         toast.loading("Creating simulation env...");
-        setDoc(docRef, {
+        await setDoc(docRef, {
           arena: checkPresentRequest.data.team.arena,
           name: checkPresentRequest.data.team.name,
           pid: teamID,
@@ -55,7 +55,6 @@ function Form() {
           },
         });
         toast.dismiss();
-        toast.success("Simulation env created");
       }
 
       toast.loading("Signing in...");
