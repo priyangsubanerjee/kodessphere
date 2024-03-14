@@ -23,10 +23,8 @@ const app = initializeApp(firebaseConfig);
 
 function Form() {
   const session = useSession();
-
-  console.log(session);
   const [loading, setLoading] = useState("");
-  const [teamID, setTeamID] = useState("ytexKCt");
+  const [teamID, setTeamID] = useState(""); // ytexKCt
   const db = getFirestore(app);
 
   const handleSubmit = async () => {
