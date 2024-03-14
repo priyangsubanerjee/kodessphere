@@ -40,7 +40,7 @@ export default function Home() {
           alt=""
         />
         <div className="flex items-center justify-center space-x-4 mt-4">
-          <p className="text-sm text-neutral-700">
+          <p className="text-sm text-neutral-700 text-center leading-7">
             Are you ready to participate & battle it out with the best of the
             best?
           </p>

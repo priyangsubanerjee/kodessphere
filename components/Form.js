@@ -17,18 +17,67 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import { signIn, useSession } from "next-auth/react";
 
 const app = initializeApp(firebaseConfig);
 
 function Form() {
-  const [teamID, setTeamID] = useState("");
+  const session = useSession();
+
+  console.log(session);
+  const [loading, setLoading] = useState("");
+  const [teamID, setTeamID] = useState("ytexKCt");
+  const db = getFirestore(app);
 
   const handleSubmit = async () => {
-    // check if team is present in mongodb
-
     let checkPresentRequest = await axios.post("/api/checks/team-present", {
       id: teamID,
     });
+
+    console.log(checkPresentRequest.data);
+    setLoading(true);
+
+    if (checkPresentRequest.data.success) {
+      const docRef = doc(db, "teams", teamID);
+      const docSnap = await getDoc(docRef);
+      if (!docSnap.exists()) {
+        toast.loading("Creating simulation env...");
+        setDoc(docRef, {
+          arena: checkPresentRequest.data.team.arena,
+          name: checkPresentRequest.data.team.name,
+          pid: teamID,
+          fan: 0,
+          count: 0,
+          bulb: 0,
+          led: "",
+          message: "",
+          ac: {
+            state: 0,
+            temp: 0,
+          },
+        });
+        toast.dismiss();
+        toast.success("Simulation env created");
+      }
+
+      toast.loading("Signing in...");
+
+      let verifyPasswordRequest = await signIn("credentials", {
+        pid: teamID,
+        redirect: false,
+      });
+
+      if (verifyPasswordRequest.ok) {
+        toast.dismiss();
+        toast.success("Signed in");
+        location.href = "/dashboard";
+      } else {
+        toast.dismiss();
+        toast.error("Invalid request");
+      }
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -55,17 +104,9 @@ function Form() {
         <div className="flex items-center justify-between mt-10">
           <button className="flex items-center space-x-2 text-sm">
             <span>Dont have a team id?</span>
-            <Link
-              href={"/register"}
-              className="flex items-center text-blue-600 space-x-2 text-sm hover:underline"
-            >
-              <span>Contact us</span>
-              <span className="translate-y-[1px]">
-                <Icon icon="formkit:right" />
-              </span>
-            </Link>
           </button>
           <Button
+            isLoading={loading}
             onClick={() => {
               handleSubmit();
             }}
