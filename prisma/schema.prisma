@@ -18,6 +18,7 @@ model Team {
   name            String?  @unique
   arena           String?
   pid             String   @unique
+  otp             String?
   gmail           String?
   apiToken        String?
   partipantsCount Int
@@ -30,19 +31,11 @@ model PhaseOne {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   teamName  String
   teamPid   String   @unique
+  gmail     String?  @unique
   content   String?
   arena     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-}
-
-model Verification {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  teamPid   String   @unique
-  password  Boolean  @default(false)
-  expired   Boolean  @default(false)
-  updatedAt DateTime @updatedAt
-  createdAt DateTime @default(now())
 }
 
 model Playground{
