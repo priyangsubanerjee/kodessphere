@@ -54,6 +54,20 @@ function Sidenav() {
               />
               <span className="ml-3 text-sm">Simulation</span>
             </li>
+            <li
+              onClick={() => setCount(3)}
+              style={{
+                backgroundColor: count === 3 ? "rgb(224 242 254)" : "",
+              }}
+              className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
+            >
+              <Icon
+                icon="material-symbols-light:target"
+                width="20"
+                height="20"
+              />
+              <span className="ml-3 text-sm">Rules & regulations</span>
+            </li>
           </ul>
         </div>
         <div className="mt-10 px-4 ">
