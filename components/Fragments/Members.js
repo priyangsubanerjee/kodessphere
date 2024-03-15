@@ -1,7 +1,9 @@
+import GlobalState from "@/context/GlobalStates";
 import { useSession } from "next-auth/react";
-import React from "react";
+import React, { useContext } from "react";
 
 function Members() {
+  const { count, setCount } = useContext(GlobalState);
   const session = useSession();
   return (
     <div className="px-10 py-6">
@@ -46,9 +48,9 @@ function Members() {
         </div>
         <p className="text-sm text-neutral-800 mt-16">
           Need to make changes?{" "}
-          <a href="#" className="text-primary-500">
+          <button onClick={() => setCount(5)} className="text-primary-500">
             Contact us
-          </a>
+          </button>
         </p>
       </div>
     </div>

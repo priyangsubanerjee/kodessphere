@@ -23,6 +23,7 @@ function RaiseHand() {
       session?.data?.user?.id,
       session?.data?.user?.name,
       session?.data?.user?.arena,
+      session?.data?.user?.members[0]?.phone,
       category,
       room,
       message
@@ -42,7 +43,8 @@ function RaiseHand() {
           Raise <span className="font-light">hand</span>
         </h1>
         <p className="text-sm text-neutral-500 mt-3">
-          Please read the instructions carefully before proceeding.
+          Abusing this feature will lead to disqualification. Please use it only
+          when you need help.
         </p>
       </div>
 
@@ -64,6 +66,9 @@ function RaiseHand() {
             </SelectItem>
             <SelectItem value="Technical" key="Technical">
               Technical
+            </SelectItem>
+            <SelectItem value="Technical" key="Technical">
+              Team data update
             </SelectItem>
             <SelectItem value="API Exhausted" key="API Exhausted">
               API limit exceeded
@@ -105,11 +110,13 @@ function RaiseHand() {
         <div className="flex justify-end mt-10">
           <Button
             isLoading={isLoading}
-            isDisabled={isLoading}
+            isDisabled={
+              category.length === 0 || room.length === 0 || message.length === 0
+            }
             onClick={() => handleSubmit()}
-            className="rounded-full bg-blue-500"
+            className="rounded-full text-white bg-black disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <span className="px-3 text-white">Submit & ask for help</span>
+            <span className="px-3">Submit & ask for help</span>
           </Button>
         </div>
       </div>
