@@ -13,6 +13,10 @@ function RaiseHand() {
   const [message, setMessage] = React.useState("");
 
   const handleSubmit = async () => {
+    if (category.length === 0 || room.length === 0 || message.length === 0) {
+      toast.error("Please fill all the fields");
+      return;
+    }
     await RaiseHandRequest(
       session?.data?.user?.id,
       session?.data?.user?.name,
@@ -98,9 +102,9 @@ function RaiseHand() {
         <div className="flex justify-end mt-10">
           <Button
             onClick={() => handleSubmit()}
-            className="text-white bg-black rounded-md"
+            className="rounded-full bg-blue-500"
           >
-            Submit & ask for help
+            <span className="px-3 text-white">Submit & ask for help</span>
           </Button>
         </div>
       </div>
