@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import { Snippet } from "next/font/google";
 import React from "react";
 
 function Konnexweb() {
@@ -34,19 +35,22 @@ function Konnexweb() {
       </div>
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
-          Api Endpoints :
+          Api reference :
         </h2>
-        <p className="text-sm leading-7 mt-3 bg-white px-6 rounded-md border py-3 w-full max-w-3xl font-mono">
-          https://api.konnexweb.com
-        </p>
+        <div className="h-14 px-4 mt-3 bg-white max-w-3xl border rounded-md flex items-center">
+          <span className="bg-pink-100 px-3 py-1 rounded-full text-xs">
+            Base path
+          </span>
+          <span className="text-sm ml-3 font-mono">
+            https://api.konnexweb.com
+          </span>
+        </div>
       </div>
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
           Parameters :
         </h2>
-        <p className="text-sm leading-7 mt-3 bg-white px-6 rounded-md border py-3 w-full max-w-3xl font-mono">
-          https://api.konnexweb.com
-        </p>
+        <p className="text-sm leading-7 mt-3 bg-white px-6 rounded-md border py-3 w-full max-w-3xl font-mono"></p>
       </div>
     </div>
   );
