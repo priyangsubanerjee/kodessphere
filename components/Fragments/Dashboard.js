@@ -12,7 +12,7 @@ function Dashboard() {
             for {session?.data?.user?.arena.toLowerCase()}
           </span>
         </h1>
-        <p className="text-sm text-neutral-600 mt-3">
+        <p className="text-sm text-neutral-500 mt-3">
           Please read the instructions carefully before proceeding.
         </p>
       </div>

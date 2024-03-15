@@ -24,7 +24,7 @@ function Sidenav() {
           />
           <div className="bg-neutral-50 py-2 text-sm px-4 mt-3 rounded-full flex items-center space-x-2">
             <Icon icon="solar:qr-code-broken" width="20" height="20" />
-            <span>ytexKCt</span>
+            <span>{session?.data?.user?.id}</span>
           </div>
         </div>
         <div className="mt-10 px-4 ">
@@ -41,7 +41,6 @@ function Sidenav() {
               <span className="ml-3 text-sm">Dashboard</span>
             </li>
             <li
-              onClick={() => setCount(1)}
               style={{
                 backgroundColor: count === 1 ? "rgb(224 242 254)" : "",
               }}
@@ -68,9 +67,19 @@ function Sidenav() {
               />
               <span className="ml-3 text-sm">Rules & regulations</span>
             </li>
+            <li
+              onClick={() => setCount(5)}
+              style={{
+                backgroundColor: count === 5 ? "rgb(224 242 254)" : "",
+              }}
+              className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
+            >
+              <Icon icon="ph:hand-light" width="20" height="20" />
+              <span className="ml-3 text-sm">Raise hand</span>
+            </li>
           </ul>
         </div>
-        <div className="mt-10 px-4 ">
+        <div className="mt-7 px-4 ">
           <span className="font-medium text-xs text-neutral-500">
             Submissions
           </span>
@@ -85,7 +94,7 @@ function Sidenav() {
             </li>
           </ul>
         </div>
-        <div className="mt-10 px-4 ">
+        <div className="mt-7 px-4 ">
           <span className="font-medium text-xs text-neutral-500">Team</span>
           <ul className="mt-3 space-y-1">
             <li
