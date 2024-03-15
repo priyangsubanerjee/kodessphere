@@ -1,11 +1,12 @@
 import { useSession } from "next-auth/react";
 import React from "react";
+import Konnexweb from "../Instructions/Konnexweb";
 
 function Dashboard() {
   const session = useSession();
   return (
     <div className="px-10 py-6">
-      <div className="mt-7">
+      <div className="mt-7 border-b pb-6">
         <h1 className="text-2xl font-semibold">
           Instructions{" "}
           <span className="font-light">
@@ -16,6 +17,7 @@ function Dashboard() {
           Please read the instructions carefully before proceeding.
         </p>
       </div>
+      <Konnexweb />
     </div>
   );
 }
