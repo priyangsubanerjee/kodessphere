@@ -4,6 +4,7 @@ import { RaiseHandRequest } from "@/helper/raise-hand";
 import { Button, Input, Select, SelectItem, Textarea } from "@nextui-org/react";
 import { useSession } from "next-auth/react";
 import React from "react";
+import toast from "react-hot-toast";
 
 function RaiseHand() {
   const session = useSession();
@@ -20,6 +21,11 @@ function RaiseHand() {
       room,
       message
     );
+
+    toast.success("Your request has been submitted successfully");
+    setCategory("");
+    setRoom("");
+    setMessage("");
   };
 
   return (
