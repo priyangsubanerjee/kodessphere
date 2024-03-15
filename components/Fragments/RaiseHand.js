@@ -11,12 +11,14 @@ function RaiseHand() {
   const [category, setCategory] = React.useState([]);
   const [room, setRoom] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleSubmit = async () => {
     if (category.length === 0 || room.length === 0 || message.length === 0) {
       toast.error("Please fill all the fields");
       return;
     }
+    setIsLoading(true);
     await RaiseHandRequest(
       session?.data?.user?.id,
       session?.data?.user?.name,
@@ -26,7 +28,8 @@ function RaiseHand() {
       message
     );
 
-    toast.success("Your request has been submitted successfully");
+    toast.success("Submitted successfully");
+    setIsLoading(false);
     setCategory("");
     setRoom("");
     setMessage("");
@@ -101,6 +104,8 @@ function RaiseHand() {
 
         <div className="flex justify-end mt-10">
           <Button
+            isLoading={isLoading}
+            isDisabled={isLoading}
             onClick={() => handleSubmit()}
             className="rounded-full bg-blue-500"
           >
