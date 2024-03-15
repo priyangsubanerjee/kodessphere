@@ -28,12 +28,14 @@ function Form() {
   const db = getFirestore(app);
 
   const handleSubmit = async () => {
+    setLoading(true);
+    toast.loading("Checking team presence...");
+
     let checkPresentRequest = await axios.post("/api/checks/team-present", {
       id: teamID,
     });
 
-    console.log(checkPresentRequest.data);
-    setLoading(true);
+    toast.dismiss();
 
     if (checkPresentRequest.data.success) {
       const docRef = doc(db, "teams", teamID);
@@ -72,6 +74,8 @@ function Form() {
         toast.dismiss();
         toast.error("Invalid request");
       }
+    } else {
+      toast.error("Team not found");
     }
 
     setLoading(false);
