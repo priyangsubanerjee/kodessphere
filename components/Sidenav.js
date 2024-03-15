@@ -103,13 +103,13 @@ function Sidenav() {
         <div className="mt-10 px-4 ">
           <div className="p-4 bg-neutral-50 rounded-md">
             <p className="text-xs text-neutral-600 tracking-wide">
-              {session?.data?.user.arena}
+              {session?.data?.user?.arena}
             </p>
             <p className="text-base text-neutral-800 font-medium mt-2">
-              {session?.data?.user.name}
+              {session?.data?.user?.name}
             </p>
             <p className="text-xs text-neutral-600 tracking-wide mt-1">
-              {session?.data?.user.email}
+              {session?.data?.user?.email}
             </p>
             <Button onClick={() => signOut()} size="sm" className="mt-4">
               Sign Out
