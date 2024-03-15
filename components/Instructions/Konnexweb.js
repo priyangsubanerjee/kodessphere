@@ -4,7 +4,7 @@ import React from "react";
 function Konnexweb() {
   return (
     <div className="pt-7">
-      <div className="text-sm bg-neutral-100 border-l-2 border-neutral-500 p-5 leading-7">
+      <div className="text-sm bg-sky-100 border-l-2 border-sky-600 p-5 leading-7">
         <Icon icon="ant-design:thunderbolt-outlined" width="24" height="24" />
         <p className="mt-3 leading-7">
           APIs are the building blocks of most modern web and mobile
@@ -18,6 +18,34 @@ function Konnexweb() {
           their applications. This could include things like weather data, stock
           prices, or demographic information. By using APIs, developers can
           create applications that are more informative and insightful.
+        </p>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Problem statement :
+        </h2>
+        <p className="text-sm leading-7 mt-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          dolorem eligendi repellat maiores explicabo laboriosam voluptatem
+          sapiente, quod ullam veritatis illo nobis magnam modi totam nihil
+          accusamus laudantium. Sint, nisi.
+        </p>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Api Endpoints :
+        </h2>
+        <p className="text-sm leading-7 mt-3 bg-white px-6 rounded-md border py-3 w-full max-w-3xl font-mono">
+          https://api.konnexweb.com
+        </p>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Parameters :
+        </h2>
+        <p className="text-sm leading-7 mt-3 bg-white px-6 rounded-md border py-3 w-full max-w-3xl font-mono">
+          https://api.konnexweb.com
         </p>
       </div>
     </div>
