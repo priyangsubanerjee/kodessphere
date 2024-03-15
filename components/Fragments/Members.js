@@ -24,7 +24,7 @@ function Members() {
               </tr>
             </thead>
             <tbody>
-              {session.data.user.members.map((member, i) => (
+              {session?.data?.user.members.map((member, i) => (
                 <tr key={i} className="border-b">
                   <td className="font-normal px-5 py-5 text-sm">{i + 1}</td>
                   <td className="font-normal px-5 py-5 text-sm flex items-center space-x-4">

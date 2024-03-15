@@ -7,7 +7,7 @@ function Details() {
 
   return (
     <div className="h-screen max-h-screen bg-neutral-50 w-full overflow-auto">
-      <Members />
+      {count == 4 ? <Members /> : null}
     </div>
   );
 }
