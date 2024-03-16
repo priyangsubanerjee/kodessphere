@@ -3,6 +3,7 @@ import KonnexwebPhase2 from "../SubTub/KonnexwebPhase2";
 import { useSession } from "next-auth/react";
 import KognizancePhase1 from "../SubSub/KognizancePhase1";
 import KognizancePhase2 from "../SubTub/KognizancePhase2";
+import KernelkombatPhase2 from "../SubTub/KernelkombatPhase2";
 
 function PhaseTwo() {
   const session = useSession();
@@ -23,7 +24,7 @@ function PhaseTwo() {
       {session.data?.user?.arena === "Konnexweb" ? (
         <KonnexwebPhase2 />
       ) : session.data?.user?.arena === "Kernelkombat" ? (
-        <></>
+        <KernelkombatPhase2 />
       ) : session.data?.user?.arena == "Kognizance" ? (
         <KognizancePhase2 />
       ) : (
