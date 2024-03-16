@@ -92,11 +92,17 @@ function Sidenav() {
             Submissions
           </span>
           <ul className="mt-3 space-y-1">
-            <li className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full">
+            <li
+              onClick={() => setCount(4)}
+              className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
+            >
               <Icon icon="codicon:lock-small" width="20" height="20" />
               <span className="ml-3 text-sm">Phase 1 submission</span>
             </li>
-            <li className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full">
+            <li
+              onClick={() => setCount(5)}
+              className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
+            >
               <Icon icon="codicon:lock-small" width="20" height="20" />
               <span className="ml-3 text-sm">Phase 2 submission</span>
             </li>

@@ -38,10 +38,17 @@ model PhaseOne {
   updatedAt DateTime @updatedAt
 }
 
-model Playground{
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    teamPid   String
-    devices   Json?
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model Playground {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  teamPid   String
+  devices   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Permissions {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
+  values    Boolean  @default(false)
+  createdAt DateTime @default(now())
 }
