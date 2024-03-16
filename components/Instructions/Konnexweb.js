@@ -44,7 +44,7 @@ function Konnexweb() {
       api_value: `
         {
             "temp": 25,
-            "state": "0",
+            "state": 0,
         }
       `,
       description: "Control the temperature (16-30) and state (0-1) of the A.C",
