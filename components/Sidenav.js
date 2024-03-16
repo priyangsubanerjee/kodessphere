@@ -4,11 +4,14 @@ import GlobalState from "@/context/GlobalStates";
 import { Icon } from "@iconify/react";
 import { Button } from "@nextui-org/react";
 import { signOut, useSession } from "next-auth/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import QRCode from "qrcode.react";
+import Link from "next/link";
 
 function Sidenav() {
   const session = useSession();
   const { count, setCount } = useContext(GlobalState);
+  const [isQrOpen, setIsQrOpen] = useState(false);
   return (
     <div className="h-full max-h-screen overflow-auto w-[300px] pb-10 bg-white shrink-0">
       <div
@@ -22,10 +25,15 @@ function Sidenav() {
             className="h-10 mx-auto"
             alt=""
           />
-          <div className="bg-neutral-50 py-2 text-sm px-4 mt-3 rounded-full flex items-center space-x-2">
+          <button
+            onClick={() => {
+              setIsQrOpen(!isQrOpen);
+            }}
+            className="bg-neutral-50 py-2 text-sm px-4 mt-3 rounded-full flex items-center space-x-2"
+          >
             <Icon icon="solar:qr-code-broken" width="20" height="20" />
             <span>{session?.data?.user?.id}</span>
-          </div>
+          </button>
         </div>
         <div className="mt-10 px-4 ">
           <span className="font-medium text-xs text-neutral-500">General</span>
@@ -40,23 +48,23 @@ function Sidenav() {
               <Icon icon="mage:dashboard-4" width="20" height="20" />
               <span className="ml-3 text-sm">Dashboard</span>
             </li>
+            <Link
+              target="_blank"
+              href={`/simulation/${session.data?.user?.id}`}
+            >
+              <li className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full">
+                <Icon
+                  icon="solar:lightbulb-bolt-line-duotone"
+                  width="20"
+                  height="20"
+                />
+                <span className="ml-3 text-sm">Simulation</span>
+              </li>
+            </Link>
             <li
+              onClick={() => setCount(1)}
               style={{
                 backgroundColor: count === 1 ? "rgb(224 242 254)" : "",
-              }}
-              className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
-            >
-              <Icon
-                icon="solar:lightbulb-bolt-line-duotone"
-                width="20"
-                height="20"
-              />
-              <span className="ml-3 text-sm">Simulation</span>
-            </li>
-            <li
-              onClick={() => setCount(3)}
-              style={{
-                backgroundColor: count === 3 ? "rgb(224 242 254)" : "",
               }}
               className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
             >
@@ -68,9 +76,9 @@ function Sidenav() {
               <span className="ml-3 text-sm">Rules & regulations</span>
             </li>
             <li
-              onClick={() => setCount(5)}
+              onClick={() => setCount(2)}
               style={{
-                backgroundColor: count === 5 ? "rgb(224 242 254)" : "",
+                backgroundColor: count === 2 ? "rgb(224 242 254)" : "",
               }}
               className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
             >
@@ -98,9 +106,9 @@ function Sidenav() {
           <span className="font-medium text-xs text-neutral-500">Team</span>
           <ul className="mt-3 space-y-1">
             <li
-              onClick={() => setCount(4)}
+              onClick={() => setCount(3)}
               style={{
-                backgroundColor: count === 4 ? "rgb(224 242 254)" : "",
+                backgroundColor: count === 3 ? "rgb(224 242 254)" : "",
               }}
               className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full"
             >
@@ -126,6 +134,27 @@ function Sidenav() {
           </div>
         </div>
       </div>
+
+      {isQrOpen && (
+        <div className="fixed inset-0 h-full w-full bg-black/50 flex items-center justify-center">
+          <div className="w-[220px] bg-white rounded-md p-3 flex flex-col items-center justify-center">
+            <QRCode
+              style={{
+                width: "200px",
+                height: "200px",
+              }}
+              className="h-full w-full"
+              value={session?.data?.user?.id}
+            />
+            <button
+              onClick={() => setIsQrOpen(false)}
+              className="mt-5 hover:underline"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

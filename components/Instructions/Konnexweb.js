@@ -12,6 +12,7 @@ function Konnexweb() {
       api_request_type: "POST",
       api_value_type: "Integer",
       api_value: "0 - 5",
+      description: "Control the speed of the fan",
     },
 
     {
@@ -21,6 +22,7 @@ function Konnexweb() {
       api_request_type: "POST",
       api_value_type: "Integer",
       api_value: "0 - 1",
+      description: "Turn on or off the bulb",
     },
 
     {
@@ -28,8 +30,9 @@ function Konnexweb() {
       icon: "https://cdn-icons-png.flaticon.com/512/8534/8534359.png",
       api_name: "led",
       api_request_type: "POST",
-      api_value_type: "Integer",
-      api_value: "0 - 5",
+      api_value_type: "String",
+      api_value: "#000000 - #ffffff",
+      description: "Control the brightness of the led",
     },
 
     {
@@ -44,12 +47,13 @@ function Konnexweb() {
             "state": "cool",
         }
       `,
+      description: "Control the temperature (16-30) and state (0-1) of the A.C",
     },
   ];
 
   const [selectedDevice, setSelectedDevice] = useState(devices[0]);
   return (
-    <div className="pt-7">
+    <div className="pt-7 pb-10">
       <div className="text-sm bg-sky-100 border-l-2 border-sky-600 p-5 leading-7">
         <Icon icon="ant-design:thunderbolt-outlined" width="24" height="24" />
         <p className="mt-3 leading-7">
@@ -146,25 +150,32 @@ function Konnexweb() {
             <tbody className="text-left">
               <tr>
                 <td className="font-normal px-5 py-3 text-sm">teamId</td>
-                <td className="font-normal px-5 py-3 text-sm">String</td>
+                <td className="font-normal px-5 py-3 text-sm text-green-600">
+                  String
+                </td>
                 <td className="font-normal px-5 py-3 text-sm">
                   Your teams unique id
                 </td>
               </tr>
               <tr>
-                <td className="font-normal px-5 py-3 text-sm">name</td>
-                <td className="font-normal px-5 py-3 text-sm">String</td>
+                <td className="font-normal px-5 py-3 text-sm">device</td>
+                <td className="font-normal px-5 py-3 text-sm text-green-600">
+                  String
+                </td>
                 <td className="font-normal px-5 py-3 text-sm">
                   {selectedDevice.api_name}
                 </td>
               </tr>
               <tr>
                 <td className="font-normal px-5 py-3 text-sm">value</td>
-                <td className="font-normal px-5 py-3 text-sm">
+                <td className="font-normal px-5 py-3 text-sm text-green-600">
                   {selectedDevice.api_value_type}
                 </td>
                 <td className="font-normal px-5 py-3 text-sm">
                   {selectedDevice.api_value}
+                </td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  {selectedDevice.description}
                 </td>
               </tr>
             </tbody>

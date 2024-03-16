@@ -12,12 +12,12 @@ function Details() {
     <div className="h-screen max-h-screen bg-neutral-50 w-full overflow-auto">
       {count == 0 ? (
         <Dashboard />
-      ) : count == 3 ? (
+      ) : count == 1 ? (
         <Rules />
-      ) : count == 4 ? (
-        <Members />
-      ) : count == 5 ? (
+      ) : count == 2 ? (
         <RaiseHand />
+      ) : count == 3 ? (
+        <Members />
       ) : null}
     </div>
   );
