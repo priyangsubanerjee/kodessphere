@@ -17,14 +17,21 @@ function Sidenav() {
 
   const handlePhaseOneSubmission = async () => {
     toast.loading("Checking permission");
-    let permissionRequested = await axios.get("/permissions/phase-one", {
+    // let permissionRequested = await axios.get("/permissions/phase-one", {
+    //   headers: {
+    //     "Cache-Control": "no-cache",
+    //   },
+    // });
+
+    let permissionRequested = await fetch("/permissions/phase-one", {
       headers: {
         "Cache-Control": "no-cache",
       },
     });
+    permissionRequested = await permissionRequested.json();
     toast.remove();
-    if (permissionRequested.data.success) {
-      if (permissionRequested.data.value == true) {
+    if (permissionRequested.success) {
+      if (permissionRequested.value == true) {
         setCount(4);
       } else {
         toast.error("Phase 1 submission not started yet.");
