@@ -38,6 +38,17 @@ model PhaseOne {
   updatedAt DateTime @updatedAt
 }
 
+model PhaseTwo {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  teamName  String
+  teamPid   String   @unique
+  gmail     String?  @unique
+  content   Json?
+  arena     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Playground {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   teamPid   String
