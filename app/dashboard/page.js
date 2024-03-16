@@ -19,4 +19,6 @@ function Dashboard() {
   );
 }
 
+export const revalidate = 1;
+
 export default Dashboard;
