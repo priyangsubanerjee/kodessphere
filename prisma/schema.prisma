@@ -46,9 +46,9 @@ model Playground {
   updatedAt DateTime @updatedAt
 }
 
-model Permissions {
+model Permission {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String   @unique
-  values    Boolean  @default(false)
+  value    Boolean  @default(false)
   createdAt DateTime @default(now())
 }

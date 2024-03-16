@@ -4,6 +4,8 @@ import Members from "./Fragments/Members";
 import Dashboard from "./Fragments/Dashboard";
 import Rules from "./Fragments/Rules";
 import RaiseHand from "./Fragments/RaiseHand";
+import PhaseOne from "./Submissions/PhaseOne";
+import PhaseTwo from "./Submissions/PhaseTwo";
 
 function Details() {
   const { count, setCount } = useContext(GlobalState);
@@ -18,6 +20,10 @@ function Details() {
         <RaiseHand />
       ) : count == 3 ? (
         <Members />
+      ) : count == 4 ? (
+        <PhaseOne />
+      ) : count == 5 ? (
+        <PhaseTwo />
       ) : null}
     </div>
   );

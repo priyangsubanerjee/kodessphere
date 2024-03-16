@@ -7,11 +7,50 @@ import { signOut, useSession } from "next-auth/react";
 import React, { useContext, useState } from "react";
 import QRCode from "qrcode.react";
 import Link from "next/link";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 function Sidenav() {
   const session = useSession();
   const { count, setCount } = useContext(GlobalState);
   const [isQrOpen, setIsQrOpen] = useState(false);
+
+  const handlePhaseOneSubmission = async () => {
+    toast.loading("Checking permission");
+    let permissionRequested = await axios.get("/permissions/phase-one");
+    toast.remove();
+    if (permissionRequested.data.success) {
+      if (permissionRequested.data.value == true) {
+        setCount(4);
+      } else {
+        toast.error("Phase 2 submission not started yet.");
+        if (count == 4) {
+          setCount(0);
+        }
+      }
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
+  const handlePhaseTwoSubmission = async () => {
+    toast.loading("Checking permission");
+    let permissionRequested = await axios.get("/permissions/phase-two");
+    toast.remove();
+    if (permissionRequested.data.success) {
+      if (permissionRequested.data.value == true) {
+        setCount(5);
+      } else {
+        toast.error("Phase 2 submission not started yet.");
+        if (count == 5) {
+          setCount(0);
+        }
+      }
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
     <div className="h-full max-h-screen overflow-auto w-[300px] pb-10 bg-white shrink-0">
       <div
@@ -93,15 +132,15 @@ function Sidenav() {
           </span>
           <ul className="mt-3 space-y-1">
             <li
-              onClick={() => setCount(4)}
-              className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
+              onClick={() => handlePhaseOneSubmission()}
+              className="flex items-center cursor-pointer bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
               <Icon icon="codicon:lock-small" width="20" height="20" />
               <span className="ml-3 text-sm">Phase 1 submission</span>
             </li>
             <li
-              onClick={() => setCount(5)}
-              className="flex items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
+              onClick={() => handlePhaseTwoSubmission()}
+              className="flex cursor-pointer items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
               <Icon icon="codicon:lock-small" width="20" height="20" />
               <span className="ml-3 text-sm">Phase 2 submission</span>
