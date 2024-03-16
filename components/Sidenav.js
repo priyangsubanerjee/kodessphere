@@ -13,7 +13,7 @@ function Sidenav() {
     <div className="h-full max-h-screen overflow-auto w-[300px] pb-10 bg-white shrink-0">
       <div
         style={{
-          opacity: session.status === "authenticated" ? 1 : 0,
+          opacity: session.status === "authenticated" ? 1 : 0.3,
         }}
       >
         <div className="mt-10 flex flex-col items-center">
