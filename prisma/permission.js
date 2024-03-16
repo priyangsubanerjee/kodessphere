@@ -6,6 +6,7 @@ export const CheckPhaseOneAllowed = async () => {
       name: "PHASE_ONE",
     },
   });
+  console.log(ph1[0]);
   if (ph1.length == 0) {
     return {
       success: false,
