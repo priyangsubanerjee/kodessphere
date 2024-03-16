@@ -184,7 +184,7 @@ function Sidenav() {
       </div>
 
       {isQrOpen && (
-        <div className="fixed inset-0 h-full w-full bg-black/50 flex items-center justify-center">
+        <div className="fixed inset-0 z-10 h-full w-full bg-black/50 flex items-center justify-center">
           <div className="w-[220px] bg-white rounded-md p-3 flex flex-col items-center justify-center">
             <QRCode
               style={{
