@@ -40,23 +40,28 @@ function Form() {
     if (checkPresentRequest.data.success) {
       const docRef = doc(db, "teams", teamID);
       const docSnap = await getDoc(docRef);
-      if (!docSnap.exists()) {
-        toast.loading("Creating simulation env...");
-        await setDoc(docRef, {
-          arena: checkPresentRequest.data.team.arena,
-          name: checkPresentRequest.data.team.name,
-          pid: teamID,
-          fan: 0,
-          count: 0,
-          bulb: 0,
-          led: "",
-          message: "",
-          ac: {
-            state: 0,
-            temp: 0,
-          },
-        });
-        toast.dismiss();
+
+      console.log(checkPresentRequest.data.team.arena);
+
+      if (checkPresentRequest.data.team.arena == "Konnexweb") {
+        if (!docSnap.exists()) {
+          toast.loading("Creating simulation env...");
+          await setDoc(docRef, {
+            arena: checkPresentRequest.data.team.arena,
+            name: checkPresentRequest.data.team.name,
+            pid: teamID,
+            fan: 0,
+            count: 0,
+            bulb: 0,
+            led: "",
+            message: "",
+            ac: {
+              state: 0,
+              temp: 0,
+            },
+          });
+          toast.dismiss();
+        }
       }
 
       toast.loading("Signing in...");
