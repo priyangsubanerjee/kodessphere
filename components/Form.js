@@ -28,6 +28,15 @@ function Form() {
   const db = getFirestore(app);
 
   const handleSubmit = async () => {
+    let eventStarted = await axios.get("/permissions/event-started");
+    console.log(eventStarted.data);
+    if (eventStarted.data.success) {
+      if (!eventStarted.data.value == true) {
+        toast.error("Event not started");
+        return;
+      }
+    }
+
     setLoading(true);
     toast.loading("Checking team presence...");
 

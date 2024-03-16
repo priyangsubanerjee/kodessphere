@@ -48,7 +48,7 @@ function Members() {
         </div>
         <p className="text-sm text-neutral-800 mt-16">
           Need to make changes?{" "}
-          <button onClick={() => setCount(5)} className="text-primary-500">
+          <button onClick={() => setCount(2)} className="text-primary-500">
             Contact us
           </button>
         </p>

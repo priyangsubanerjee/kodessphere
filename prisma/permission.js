@@ -42,3 +42,24 @@ export const CheckPhaseTwoAllowed = async () => {
     };
   }
 };
+
+export const CheckEventStarted = async () => {
+  let event = await prisma.permission.findMany({
+    where: {
+      name: "EV_STARTED",
+    },
+  });
+  if (event.length == 0) {
+    return {
+      success: false,
+      message: "Event not found",
+      value: false,
+    };
+  } else {
+    return {
+      success: true,
+      message: "Event fetched successfully",
+      value: event[0].value,
+    };
+  }
+};
