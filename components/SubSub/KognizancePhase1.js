@@ -2,7 +2,7 @@ import GlobalState from "@/context/GlobalStates";
 import { Button, Textarea } from "@nextui-org/react";
 import axios from "axios";
 import { useSession } from "next-auth/react";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 
 function KognizancePhase1() {
