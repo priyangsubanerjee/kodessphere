@@ -10,7 +10,7 @@ function Konnexweb() {
       icon: "https://cdn-icons-png.flaticon.com/512/556/556878.png",
       api_name: "fan",
       api_request_type: "POST",
-      api_value_type: "String",
+      api_value_type: "Integer",
       api_value: "0 - 5",
     },
 
@@ -19,8 +19,8 @@ function Konnexweb() {
       icon: "https://cdn-icons-png.flaticon.com/512/427/427735.png",
       api_name: "bulb",
       api_request_type: "POST",
-      api_value_type: "String",
-      api_value: "0 - 5",
+      api_value_type: "Integer",
+      api_value: "0 - 1",
     },
 
     {
@@ -28,7 +28,7 @@ function Konnexweb() {
       icon: "https://cdn-icons-png.flaticon.com/512/8534/8534359.png",
       api_name: "led",
       api_request_type: "POST",
-      api_value_type: "String",
+      api_value_type: "Integer",
       api_value: "0 - 5",
     },
 
@@ -37,8 +37,13 @@ function Konnexweb() {
       icon: "https://cdn-icons-png.flaticon.com/512/911/911409.png",
       api_name: "ac",
       api_request_type: "POST",
-      api_value_type: "String",
-      api_value: "0 - 5",
+      api_value_type: "JSON",
+      api_value: `
+        {
+            "temp": 25,
+            "state": "cool",
+        }
+      `,
     },
   ];
 
@@ -61,7 +66,6 @@ function Konnexweb() {
           create applications that are more informative and insightful.
         </p>
       </div>
-
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
           Problem statement :
@@ -82,7 +86,7 @@ function Konnexweb() {
             Base path
           </span>
           <span className="text-sm ml-3 font-mono">
-            https://api.konnexweb.com
+            https://kodessphere-api.vercel.app
           </span>
         </div>
       </div>
@@ -115,16 +119,15 @@ function Konnexweb() {
           </div>
         </div>
 
-        <div className="p-6 bg-white mt-4 border border-neutral-200 rounded-md">
+        <div className="p-6 bg-white mt-4 border border-neutral-200 rounded-lg">
           <div className="flex items-center">
-            <span className="bg-yellow-100 text-black px-4 py-2 font-semibold rounded-full text-xs">
+            <span className="bg-yellow-100 text-black px-4 py-2 font-semibold rounded-full tracking-wider text-xs">
               POST
             </span>
-            <span className="text-sm ml-3 font-mono">/api/v1/fan</span>
+            <span className="text-sm ml-3 font-mono">/iot-device</span>
           </div>
-
-          <table className="w-fit lg:w-full text-left mt-6">
-            <thead>
+          <table className="mt-4 w-full">
+            <thead className="text-left">
               <tr>
                 <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
                   Parameters
@@ -135,29 +138,34 @@ function Konnexweb() {
                 <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
                   Value
                 </th>
+                <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
+                  Description
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-left">
               <tr>
-                <td className="font-normal px-5 py-3 text-sm flex items-center space-x-4">
-                  teamId
-                </td>
+                <td className="font-normal px-5 py-3 text-sm">teamId</td>
                 <td className="font-normal px-5 py-3 text-sm">String</td>
-                <td className="font-normal px-5 py-3 text-sm"></td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  Your teams unique id
+                </td>
               </tr>
               <tr>
-                <td className="font-normal px-5 py-3 text-sm flex items-center space-x-4">
-                  name
-                </td>
+                <td className="font-normal px-5 py-3 text-sm">name</td>
                 <td className="font-normal px-5 py-3 text-sm">String</td>
-                <td className="font-normal px-5 py-3 text-sm">fan</td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  {selectedDevice.api_name}
+                </td>
               </tr>
               <tr>
-                <td className="font-normal px-5 py-3 text-sm flex items-center space-x-4">
-                  value
+                <td className="font-normal px-5 py-3 text-sm">value</td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  {selectedDevice.api_value_type}
                 </td>
-                <td className="font-normal px-5 py-3 text-sm">Integer</td>
-                <td className="font-normal px-5 py-3 text-sm">0 - 5</td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  {selectedDevice.api_value}
+                </td>
               </tr>
             </tbody>
           </table>
