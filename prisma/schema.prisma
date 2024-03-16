@@ -32,7 +32,7 @@ model PhaseOne {
   teamName  String
   teamPid   String   @unique
   gmail     String?  @unique
-  content   String?
+  content   Json?
   arena     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
