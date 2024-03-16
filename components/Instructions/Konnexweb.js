@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Icon } from "@iconify/react";
 import { Snippet } from "@nextui-org/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Konnexweb() {
@@ -81,6 +82,14 @@ function Konnexweb() {
           pleasing, intuitive to navigate, and follow best practices for user
           experience (UX) and user interface (UI) design.
         </p>
+      </div>
+      <div className="mt-16">
+        <Link
+          className="bg-black text-white py-3 px-4 rounded text-sm"
+          href="/pdf/konnexweb.pdf"
+        >
+          Click here for a detailed information
+        </Link>
       </div>
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">

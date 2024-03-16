@@ -2,6 +2,7 @@ import { useSession } from "next-auth/react";
 import React from "react";
 import Konnexweb from "../Instructions/Konnexweb";
 import Kernelkombat from "../Instructions/Kernelkombat";
+import Kognizance from "../Instructions/Kognizance";
 
 function Dashboard() {
   const session = useSession();
@@ -22,6 +23,8 @@ function Dashboard() {
         <Konnexweb />
       ) : session.data?.user?.arena === "Kernelkombat" ? (
         <Kernelkombat />
+      ) : session.data?.user?.arena === "Kognizance" ? (
+        <Kognizance />
       ) : (
         <></>
       )}
