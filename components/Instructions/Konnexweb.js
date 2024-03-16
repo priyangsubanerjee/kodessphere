@@ -129,7 +129,7 @@ function Konnexweb() {
             <span className="bg-yellow-100 text-black px-4 py-2 font-semibold rounded-full tracking-wider text-xs">
               POST
             </span>
-            <span className="text-sm ml-3 font-mono">/iot-device</span>
+            <span className="text-sm ml-3 font-mono">/devices</span>
           </div>
           <table className="mt-4 w-full">
             <thead className="text-left">
