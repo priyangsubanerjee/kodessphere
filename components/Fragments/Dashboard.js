@@ -17,7 +17,7 @@ function Dashboard() {
           Please read the instructions carefully before proceeding.
         </p>
       </div>
-      <Konnexweb />
+      {session.data?.user?.arena === "Konnexweb" && <Konnexweb />}
     </div>
   );
 }

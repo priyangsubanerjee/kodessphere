@@ -87,19 +87,22 @@ function Sidenav() {
               <Icon icon="mage:dashboard-4" width="20" height="20" />
               <span className="ml-3 text-sm">Dashboard</span>
             </li>
-            <Link
-              target="_blank"
-              href={`/simulation/${session.data?.user?.id}`}
-            >
-              <li className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full">
-                <Icon
-                  icon="solar:lightbulb-bolt-line-duotone"
-                  width="20"
-                  height="20"
-                />
-                <span className="ml-3 text-sm">Simulation</span>
-              </li>
-            </Link>
+
+            {session.data?.user?.arena === "Konnexweb" && (
+              <Link
+                target="_blank"
+                href={`/simulation/${session.data?.user?.id}`}
+              >
+                <li className="flex items-center cursor-pointer hover:bg-sky-50 px-5 py-3 rounded-full">
+                  <Icon
+                    icon="solar:lightbulb-bolt-line-duotone"
+                    width="20"
+                    height="20"
+                  />
+                  <span className="ml-3 text-sm">Simulation</span>
+                </li>
+              </Link>
+            )}
             <li
               onClick={() => setCount(1)}
               style={{
