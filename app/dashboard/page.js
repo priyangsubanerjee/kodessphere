@@ -8,6 +8,8 @@ import { Button } from "@nextui-org/react";
 import { signOut, useSession } from "next-auth/react";
 import React, { useContext } from "react";
 
+export const dynamic = "force-dynamic";
+
 function Dashboard() {
   const session = useSession();
   const { count } = useContext(GlobalState);
