@@ -75,10 +75,11 @@ function Konnexweb() {
           Problem statement :
         </h2>
         <p className="text-sm leading-7 mt-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-          dolorem eligendi repellat maiores explicabo laboriosam voluptatem
-          sapiente, quod ullam veritatis illo nobis magnam modi totam nihil
-          accusamus laudantium. Sint, nisi.
+          Craft a web interface that seamlessly interacts with the provided API
+          and framework to control smart home elements, specifically focusing on
+          fan lights and other equipment. The interface should be aesthetically
+          pleasing, intuitive to navigate, and follow best practices for user
+          experience (UX) and user interface (UI) design.
         </p>
       </div>
       <div className="mt-12">

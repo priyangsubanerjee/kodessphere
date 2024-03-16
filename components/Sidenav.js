@@ -23,7 +23,7 @@ function Sidenav() {
       if (permissionRequested.data.value == true) {
         setCount(4);
       } else {
-        toast.error("Phase 2 submission not started yet.");
+        toast.error("Phase 1 submission not started yet.");
         if (count == 4) {
           setCount(0);
         }

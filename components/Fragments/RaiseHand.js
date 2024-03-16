@@ -67,7 +67,7 @@ function RaiseHand() {
             <SelectItem value="Technical" key="Technical">
               Technical
             </SelectItem>
-            <SelectItem value="Technical" key="Technical">
+            <SelectItem value="Team data update" key="Team data update">
               Team data update
             </SelectItem>
             <SelectItem value="API Exhausted" key="API Exhausted">
