@@ -17,25 +17,10 @@ function Sidenav() {
 
   const handlePhaseOneSubmission = async () => {
     toast.loading("Checking permission");
-    // let permissionRequested = await axios.get("/permissions/phase-one", {
-    //   headers: {
-    //     "Cache-Control": "no-cache",
-    //   },
-    // });
-
-    let permissionRequested = await fetch(
-      "/permissions/phase-one",
-      {
-        headers: {
-          "Cache-Control": "no-cache",
-        },
-      },
-      { cache: "no-store" }
-    );
-    permissionRequested = await permissionRequested.json();
+    let permissionRequested = await axios.get("/permissions/phase-one");
     toast.remove();
-    if (permissionRequested.success) {
-      if (permissionRequested.value == true) {
+    if (permissionRequested.data.success) {
+      if (permissionRequested.data.value == true) {
         setCount(4);
       } else {
         toast.error("Phase 1 submission not started yet.");
@@ -50,11 +35,7 @@ function Sidenav() {
 
   const handlePhaseTwoSubmission = async () => {
     toast.loading("Checking permission");
-    let permissionRequested = await axios.get("/permissions/phase-two", {
-      headers: {
-        "Cache-Control": "no-cache",
-      },
-    });
+    let permissionRequested = await axios.get("/permissions/phase-two");
     toast.remove();
     if (permissionRequested.data.success) {
       if (permissionRequested.data.value == true) {
