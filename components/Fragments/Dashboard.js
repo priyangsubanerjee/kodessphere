@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import React from "react";
 import Konnexweb from "../Instructions/Konnexweb";
+import Kernelkombat from "../Instructions/Kernelkombat";
 
 function Dashboard() {
   const session = useSession();
@@ -17,7 +18,13 @@ function Dashboard() {
           Please read the instructions carefully before proceeding.
         </p>
       </div>
-      {session.data?.user?.arena === "Konnexweb" && <Konnexweb />}
+      {session.data?.user?.arena === "Konnexweb" ? (
+        <Konnexweb />
+      ) : session.data?.user?.arena === "Kernelkombat" ? (
+        <Kernelkombat />
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

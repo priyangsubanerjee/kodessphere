@@ -1,0 +1,74 @@
+import { Icon } from "@iconify/react";
+import Link from "next/link";
+import React from "react";
+
+function Kernelkombat() {
+  return (
+    <div className="pt-7 pb-10">
+      <div>
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Problem statement 01:
+        </h2>
+        <p className="text-sm leading-7 mt-3">
+          <span className="underline">Customer Churn Prediction:</span> Use a
+          telecom dataset to predict whether a customer will churn based on
+          their usage, service complaints and other features. This will involve
+          handling imbalanced data and feature engineering.
+        </p>
+        <Link
+          href={
+            "https://drive.google.com/drive/folders/1TVgow_mdKvINADFW326Anlarvl7XzlVR"
+          }
+        >
+          <button className="text-sm mt-3">Dataset →</button>
+        </Link>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Problem statement 02:
+        </h2>
+        <p className="text-sm leading-7 mt-3">
+          <span className="underline">Predictive Maintenance:</span> Use sensor
+          data from machines to predict when maintenance should be performed to
+          prevent unexpected failures. This will involve time-series analysis
+          and possibly dealing with large, noisy datasets.
+        </p>
+        <Link
+          href={
+            "https://drive.google.com/drive/folders/1TVgow_mdKvINADFW326Anlarvl7XzlVR?usp=drive_link"
+          }
+        >
+          <button className="text-sm mt-3">Dataset →</button>
+        </Link>
+      </div>
+      <div className="mt-12">
+        <h2 className="font-semibold text-neutral-800 text-base">
+          Problem statement 02:
+        </h2>
+        <p className="text-sm leading-7 mt-3">
+          <span className="underline">Taxi Trip Duration :</span> Based on
+          individual taxi trip attributes, you should predict the duration of
+          each trip in the test set.
+        </p>
+        <Link
+          href={
+            "https://drive.google.com/drive/folders/1TVgow_mdKvINADFW326Anlarvl7XzlVR?usp=drive_link"
+          }
+        >
+          <button className="text-sm mt-3">Dataset →</button>
+        </Link>
+      </div>
+
+      <div className="mt-16">
+        <Link
+          className="bg-black text-white py-3 px-4 rounded text-sm"
+          href="https://annimukherjee.notion.site/Konnexions-ML-Hackathon-d6d02a6e59ff4284bb8ef9fe8b4aed3e"
+        >
+          Click here for a detailed information
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default Kernelkombat;
