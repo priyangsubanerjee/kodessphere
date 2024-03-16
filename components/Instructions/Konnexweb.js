@@ -44,7 +44,7 @@ function Konnexweb() {
       api_value: `
         {
             "temp": 25,
-            "state": "cool",
+            "state": "0",
         }
       `,
       description: "Control the temperature (16-30) and state (0-1) of the A.C",
@@ -150,7 +150,7 @@ function Konnexweb() {
             </thead>
             <tbody className="text-left">
               <tr>
-                <td className="font-normal px-5 py-3 text-sm">teamId</td>
+                <td className="font-normal px-5 py-3 text-sm">teamid</td>
                 <td className="font-normal px-5 py-3 text-sm text-green-600">
                   String
                 </td>
