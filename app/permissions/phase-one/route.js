@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { CheckPhaseOneAllowed } from "@/prisma/permission";
 
 export async function GET(request) {
