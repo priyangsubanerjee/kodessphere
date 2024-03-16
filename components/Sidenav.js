@@ -23,11 +23,15 @@ function Sidenav() {
     //   },
     // });
 
-    let permissionRequested = await fetch("/permissions/phase-one", {
-      headers: {
-        "Cache-Control": "no-cache",
+    let permissionRequested = await fetch(
+      "/permissions/phase-one",
+      {
+        headers: {
+          "Cache-Control": "no-cache",
+        },
       },
-    });
+      { cache: "no-store" }
+    );
     permissionRequested = await permissionRequested.json();
     toast.remove();
     if (permissionRequested.success) {
