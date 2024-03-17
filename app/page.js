@@ -48,12 +48,11 @@ export default function Home() {
         <Form />
 
         <div className="max-w-2xl mx-auto mt-16 text-sm">
-          <h2 className="text-lg font-semibold mt-10">Event schedule</h2>
+          <h2 className="text-lg font-semibold mt-10">Are you excited ?</h2>
           <p className="leading-7 mt-2 text-neutral-500">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas
-            soluta culpa deleniti excepturi laudantium laboriosam facilis
-            eveniet enim voluptate nulla pariatur saepe ducimus tempora autem
-            amet hic est, quo quaerat.
+            We are too! Gear up, coders! 🚀 Kodesphere v1.0 by Konnexions is
+            happening now. Dive into a world of coding, challenges, and
+            unparalleled innovation.
           </p>
 
           <div className="mt-10 flex">

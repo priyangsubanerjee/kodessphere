@@ -50,8 +50,6 @@ function Form() {
       const docRef = doc(db, "teams", teamID);
       const docSnap = await getDoc(docRef);
 
-      console.log(checkPresentRequest.data.team.arena);
-
       if (checkPresentRequest.data.team.arena == "Konnexweb") {
         if (!docSnap.exists()) {
           toast.loading("Creating simulation env...");
@@ -117,9 +115,11 @@ function Form() {
         </div>
 
         <div className="flex items-center justify-between mt-10">
-          <button className="flex items-center space-x-2 text-sm">
-            <span>Dont have a team id?</span>
-          </button>
+          <Link href="https://events.konnexions.dev/contact">
+            <button className="flex items-center space-x-2 text-sm">
+              <span>Dont have a team id?</span>
+            </button>
+          </Link>
           <Button
             isLoading={loading}
             onClick={() => {
