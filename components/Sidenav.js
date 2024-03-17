@@ -135,6 +135,9 @@ function Sidenav() {
           <ul className="mt-3 space-y-1">
             <li
               onClick={() => handlePhaseOneSubmission()}
+              style={{
+                backgroundColor: count === 4 ? "rgb(224 242 254)" : "",
+              }}
               className="flex items-center cursor-pointer bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
               <Icon
@@ -146,6 +149,9 @@ function Sidenav() {
             </li>
             <li
               onClick={() => handlePhaseTwoSubmission()}
+              style={{
+                backgroundColor: count === 5 ? "rgb(224 242 254)" : "",
+              }}
               className="flex cursor-pointer items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
               <Icon
