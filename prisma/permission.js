@@ -6,7 +6,6 @@ export const CheckPhaseOneAllowed = async () => {
       name: "PHASE_ONE",
     },
   });
-  console.log(ph1[0]);
   if (ph1.length == 0) {
     return {
       success: false,
@@ -60,6 +59,27 @@ export const CheckEventStarted = async () => {
       success: true,
       message: "Event fetched successfully",
       value: event[0].value,
+    };
+  }
+};
+
+export const checkMLAllowed = async () => {
+  let ml = await prisma.permission.findMany({
+    where: {
+      name: "ML_SUB",
+    },
+  });
+  if (ml.length == 0) {
+    return {
+      success: false,
+      message: "Permission not found",
+      value: false,
+    };
+  } else {
+    return {
+      success: true,
+      message: "Permission fetched successfully",
+      value: ml[0].value,
     };
   }
 };

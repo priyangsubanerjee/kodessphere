@@ -31,36 +31,47 @@ function KernelkombatPhase2() {
 
   const handleSubmit = async () => {
     toast.loading("Submitting...");
-    let submitRequest = await axios.post("/api/submission/phase-two", {
-      id: session.data.user.id,
-      name: session.data.user.name,
-      arena: session.data.user.arena,
-      gmail: session.data.user.email,
-      content: {
-        ps1ColabLink: ps1ColabLink,
-        ps1F1Score: ps1F1Score,
-        ps1Accuracy: ps1Accuracy,
-        ps1WeightFileLink: ps1WeightFileLink,
-        ps1PythonCode: ps1PythonCode,
-        ps2ColabLink: ps2ColabLink,
-        ps2Rmse: ps2Rmse,
-        ps2WeightFileLink: ps2WeightFileLink,
-        ps2PythonCode: ps2PythonCode,
-        ps3ColabLink: ps3ColabLink,
-        ps3F1Score: ps3F1Score,
-        ps3Accuracy: ps3Accuracy,
-        ps3WeightFileLink: ps3WeightFileLink,
-        ps3PythonCode: ps3PythonCode,
-      },
-    });
 
-    toast.remove();
-    if (submitRequest.data.success) {
-      toast.success(submitRequest.data.message);
-      setCount(0);
-    } else {
-      toast.error(submitRequest.data.message);
-      setCount(0);
+    let permissionSub = await axios.get("/permissions/ml-sub");
+
+    if (permissionSub.data.success) {
+      if (permissionSub.data.value != true) {
+        toast.dismiss();
+        toast.error("Submissions Closed");
+        return;
+      } else {
+        let submitRequest = await axios.post("/api/submission/phase-two", {
+          id: session.data.user.id,
+          name: session.data.user.name,
+          arena: session.data.user.arena,
+          gmail: session.data.user.email,
+          content: {
+            ps1ColabLink: ps1ColabLink,
+            ps1F1Score: ps1F1Score,
+            ps1Accuracy: ps1Accuracy,
+            ps1WeightFileLink: ps1WeightFileLink,
+            ps1PythonCode: ps1PythonCode,
+            ps2ColabLink: ps2ColabLink,
+            ps2Rmse: ps2Rmse,
+            ps2WeightFileLink: ps2WeightFileLink,
+            ps2PythonCode: ps2PythonCode,
+            ps3ColabLink: ps3ColabLink,
+            ps3F1Score: ps3F1Score,
+            ps3Accuracy: ps3Accuracy,
+            ps3WeightFileLink: ps3WeightFileLink,
+            ps3PythonCode: ps3PythonCode,
+          },
+        });
+
+        toast.remove();
+        if (submitRequest.data.success) {
+          toast.success(submitRequest.data.message);
+          setCount(0);
+        } else {
+          toast.error(submitRequest.data.message);
+          setCount(0);
+        }
+      }
     }
   };
 
