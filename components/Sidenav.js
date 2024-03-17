@@ -137,14 +137,22 @@ function Sidenav() {
               onClick={() => handlePhaseOneSubmission()}
               className="flex items-center cursor-pointer bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
-              <Icon icon="codicon:lock-small" width="20" height="20" />
+              <Icon
+                icon={count == 4 ? "prime:unlock" : "codicon:lock-small"}
+                width="20"
+                height="20"
+              />
               <span className="ml-3 text-sm">Phase 1 submission</span>
             </li>
             <li
               onClick={() => handlePhaseTwoSubmission()}
               className="flex cursor-pointer items-center bg-sky-50/0 hover:bg-sky-50 px-5 py-3 rounded-full"
             >
-              <Icon icon="codicon:lock-small" width="20" height="20" />
+              <Icon
+                icon={count == 5 ? "prime:unlock" : "codicon:lock-small"}
+                width="20"
+                height="20"
+              />
               <span className="ml-3 text-sm">Phase 2 submission</span>
             </li>
           </ul>
