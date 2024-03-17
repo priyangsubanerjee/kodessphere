@@ -5,7 +5,21 @@ import React from "react";
 function Kernelkombat() {
   return (
     <div className="pt-7 pb-10">
-      <div>
+      <div className="text-sm bg-sky-100 border-l-2 border-sky-600 p-5 leading-7">
+        <Icon icon="ant-design:thunderbolt-outlined" width="24" height="24" />
+        <p className="mt-3 leading-7">
+          Welcome to the Hackathon! This event is designed to test your skills,
+          creativity, and speed in solving a range of problems from easy to
+          hard.
+        </p>
+        <p className="mt-3">
+          Many APIs provide access to valuable data that developers can use in
+          their applications. This could include things like weather data, stock
+          prices, or demographic information. By using APIs, developers can
+          create applications that are more informative and insightful.
+        </p>
+      </div>
+      <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
           Problem statement 01:
         </h2>
