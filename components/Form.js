@@ -60,7 +60,7 @@ function Form() {
             fan: 0,
             count: 0,
             bulb: 0,
-            led: "",
+            led: "#fff",
             message: "",
             ac: {
               state: 0,

@@ -33,7 +33,7 @@ function Konnexweb() {
       api_request_type: "POST",
       api_value_type: "String",
       api_value: "#000000 - #ffffff",
-      description: "Control the brightness of the led",
+      description: "Control the color of the led",
     },
 
     {
