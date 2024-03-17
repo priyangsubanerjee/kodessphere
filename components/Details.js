@@ -1,3 +1,5 @@
+"use client";
+
 import GlobalState from "@/context/GlobalStates";
 import React, { useContext } from "react";
 import Members from "./Fragments/Members";
