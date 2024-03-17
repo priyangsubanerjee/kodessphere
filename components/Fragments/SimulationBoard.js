@@ -12,7 +12,7 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { useSession } from "next-auth/react";
-import { Input } from "@nextui-org/react";
+import { Input, Spinner } from "@nextui-org/react";
 
 const app = initializeApp(firebaseConfig);
 
@@ -87,59 +87,68 @@ function SimulationBoard({ tid }) {
         This page listens to the changes in the database and updates the UI in
         real time.
       </p>
-      <div className="flex max-w-4xl mx-auto mt-12">
-        <div className="bg-white border p-5 rounded-lg">
-          <h2 className="font-semibold">Fan</h2>
-          <p className="text-sm mt-2">{devicesProps[0].description}</p>
-          <img className="h-12 mt-4" src={devicesProps[0].icon} alt="" />
-          <Input
-            className="mt-5"
-            label="Speed"
-            type="number"
-            value={devices ? devices.fan : ""}
-            readOnly
-          />
+      {devices == null ? (
+        <div className="flex space-x-3 mt-12 items-center justify-center">
+          <Spinner size="large" />
+          <span className="text-sm text-neutral-500">
+            Loading simulation board
+          </span>
         </div>
-        <div className="bg-white border p-5 rounded-lg">
-          <h2 className="font-semibold">Bulb</h2>
-          <p className="text-sm mt-2">{devicesProps[1].description}</p>
-          <img className="h-12 mt-4" src={devicesProps[1].icon} alt="" />
-          <Input
-            className="mt-5"
-            label="State"
-            value={devices ? (devices.bulb == 0 ? "Off" : "On") : ""}
-            readOnly
-          />
+      ) : (
+        <div className="flex mt-12 justify-center flex-wrap gap-4">
+          <div className="bg-white border p-5 rounded-lg">
+            <h2 className="font-semibold">Fan</h2>
+            <p className="text-sm mt-2">{devicesProps[0].description}</p>
+            <img className="h-12 mt-4" src={devicesProps[0].icon} alt="" />
+            <Input
+              className="mt-5"
+              label="Speed"
+              type="number"
+              value={devices ? devices.fan : ""}
+              readOnly
+            />
+          </div>
+          <div className="bg-white border p-5 rounded-lg">
+            <h2 className="font-semibold">Bulb</h2>
+            <p className="text-sm mt-2">{devicesProps[1].description}</p>
+            <img className="h-12 mt-4" src={devicesProps[1].icon} alt="" />
+            <Input
+              className="mt-5"
+              label="State"
+              value={devices ? (devices.bulb == 0 ? "Off" : "On") : ""}
+              readOnly
+            />
+          </div>
+          <div className="bg-white border p-5 rounded-lg">
+            <h2 className="font-semibold">Led</h2>
+            <p className="text-sm mt-2">{devicesProps[2].description}</p>
+            <img className="h-12 mt-4" src={devicesProps[2].icon} alt="" />
+            <Input
+              className="mt-5"
+              label="Color"
+              value={devices ? devices.led : ""}
+              readOnly
+            />
+          </div>
+          <div className="bg-white border p-5 rounded-lg">
+            <h2 className="font-semibold">Air conditioner</h2>
+            <p className="text-sm mt-2">Control state & temp of Ac</p>
+            <img className="h-12 mt-4" src={devicesProps[3].icon} alt="" />
+            <Input
+              className="mt-5"
+              label="State"
+              value={devices ? (devices.ac.state == 0 ? "Off" : "On") : ""}
+              readOnly
+            />
+            <Input
+              className="mt-2"
+              label="Temperature"
+              value={devices ? devices.ac.temp : ""}
+              readOnly
+            />
+          </div>
         </div>
-        <div className="bg-white border p-5 rounded-lg">
-          <h2 className="font-semibold">Led</h2>
-          <p className="text-sm mt-2">{devicesProps[2].description}</p>
-          <img className="h-12 mt-4" src={devicesProps[2].icon} alt="" />
-          <Input
-            className="mt-5"
-            label="Color"
-            value={devices ? devices.led : ""}
-            readOnly
-          />
-        </div>
-        <div className="bg-white border p-5 rounded-lg">
-          <h2 className="font-semibold">Air conditioner</h2>
-          <p className="text-sm mt-2">Control state & temp of Ac</p>
-          <img className="h-12 mt-4" src={devicesProps[3].icon} alt="" />
-          <Input
-            className="mt-5"
-            label="State"
-            value={devices ? (devices.ac.state == 0 ? "Off" : "On") : ""}
-            readOnly
-          />
-          <Input
-            className="mt-2"
-            label="Temperature"
-            value={devices ? devices.ac.temp : ""}
-            readOnly
-          />
-        </div>
-      </div>
+      )}
     </div>
   );
 }
