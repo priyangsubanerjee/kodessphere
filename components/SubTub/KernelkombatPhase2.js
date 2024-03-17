@@ -20,10 +20,7 @@ function KernelkombatPhase2() {
   const [ps1WeightFileLink, setPs1WeightFileLink] = React.useState("");
   const [ps1PythonCode, setPs1PythonCode] = React.useState("");
   const [ps2ColabLink, setPs2ColabLink] = React.useState("");
-  const [ps2F1Score, setPs2F1Score] = React.useState("");
-  const [ps2Accuracy, setPs2Accuracy] = React.useState("");
-  const [ps2Precision, setPs2Precision] = React.useState("");
-  const [ps2Recall, setPs2Recall] = React.useState("");
+  const [ps2Rmse, setPs2Rmse] = React.useState("");
   const [ps2WeightFileLink, setPs2WeightFileLink] = React.useState("");
   const [ps2PythonCode, setPs2PythonCode] = React.useState("");
   const [ps3ColabLink, setPs3ColabLink] = React.useState("");
@@ -46,10 +43,7 @@ function KernelkombatPhase2() {
         ps1WeightFileLink: ps1WeightFileLink,
         ps1PythonCode: ps1PythonCode,
         ps2ColabLink: ps2ColabLink,
-        ps2F1Score: ps2F1Score,
-        ps2Accuracy: ps2Accuracy,
-        ps2Precision: ps2Precision,
-        ps2Recall: ps2Recall,
+        ps2Rmse: ps2Rmse,
         ps2WeightFileLink: ps2WeightFileLink,
         ps2PythonCode: ps2PythonCode,
         ps3ColabLink: ps3ColabLink,
@@ -122,24 +116,9 @@ function KernelkombatPhase2() {
             onChange={(e) => setPs2ColabLink(e.target.value)}
           />
           <Input
-            label="F1 Score"
-            value={ps2F1Score}
-            onChange={(e) => setPs2F1Score(e.target.value)}
-          />
-          <Input
-            label="Accuracy"
-            value={ps2Accuracy}
-            onChange={(e) => setPs2Accuracy(e.target.value)}
-          />
-          <Input
-            label="Precision"
-            value={ps2Precision}
-            onChange={(e) => setPs2Precision(e.target.value)}
-          />
-          <Input
-            label="Recall"
-            value={ps2Recall}
-            onChange={(e) => setPs2Recall(e.target.value)}
+            label="RMSE"
+            value={ps2Rmse}
+            onChange={(e) => setPs2Rmse(e.target.value)}
           />
 
           <Input
