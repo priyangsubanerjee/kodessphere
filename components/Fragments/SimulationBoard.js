@@ -83,7 +83,7 @@ function SimulationBoard({ tid }) {
       <h2 className="text-2xl font-semibold text-center text-neutral-700">
         Simulation page for {devices ? devices.name : tid}
       </h2>
-      <p className="text-center text-sm text-neutral-600 mt-3">
+      <p className="text-center text-sm text-neutral-600 mt-4">
         This page listens to the changes in the database and updates the UI in
         real time.
       </p>
