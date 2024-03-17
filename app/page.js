@@ -46,7 +46,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="pt-20 lg:pt-24 ">
+    <div className="pt-20 lg:pt-24 pb-10">
       <div className="relative">
         <img
           src="https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjkwNC1udW5ueS0wMTJfMy5qcGc.jpg"
