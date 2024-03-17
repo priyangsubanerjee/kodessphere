@@ -43,12 +43,17 @@ function Kernelkombat() {
       </div>
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
-          Problem statement 02:
+          Problem statement 03:
         </h2>
         <p className="text-sm leading-7 mt-3">
-          <span className="underline">Taxi Trip Duration :</span> Based on
-          individual taxi trip attributes, you should predict the duration of
-          each trip in the test set.
+          <span className="underline">Disaster or Not? :</span> Twitter has
+          emerged as a vital platform for communication during emergencies. The
+          widespread use of smartphones allows individuals to report emergencies
+          as they happen in real time. Consequently, an increasing number of
+          organisations, including disaster relief agencies and news outlets,
+          are showing interest in systematically tracking Twitter. However,
+          determining whether someone&apos;s posts genuinely indicate a disaster
+          can often be challenging.
         </p>
         <Link
           href={
