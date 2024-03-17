@@ -31,7 +31,7 @@ function Form() {
     toast.loading("Checking permission");
 
     let eventStarted = await axios.get("/permissions/event-started");
-    console.log(eventStarted.data);
+    toast.dismiss();
     if (eventStarted.data.success) {
       if (!eventStarted.data.value == true) {
         toast.error("Event not started");
@@ -39,7 +39,6 @@ function Form() {
       }
     }
 
-    toast.remove();
     setLoading(true);
     toast.loading("Checking team presence...");
 
