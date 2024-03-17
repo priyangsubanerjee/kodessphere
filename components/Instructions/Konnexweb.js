@@ -191,6 +191,47 @@ function Konnexweb() {
             </tbody>
           </table>
         </div>
+
+        <h2 className="font-semibold text-neutral-800 text-base mt-12">
+          Get your devices
+        </h2>
+        <div className="p-6 bg-white mt-4 border border-neutral-200 rounded-lg">
+          <div className="flex items-center">
+            <span className="bg-red-100 text-black px-4 py-2 font-semibold rounded-full tracking-wider text-xs">
+              GET
+            </span>
+            <span className="text-sm ml-3 font-mono">/devices/:id</span>
+          </div>
+          <table className="mt-4 w-full">
+            <thead className="text-left">
+              <tr>
+                <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
+                  Parameters
+                </th>
+                <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
+                  Type
+                </th>
+                <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
+                  Value
+                </th>
+                <th className="font-semibold text-neutral-600 px-5 py-4 text-sm">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-left">
+              <tr>
+                <td className="font-normal px-5 py-3 text-sm">id</td>
+                <td className="font-normal px-5 py-3 text-sm text-green-600">
+                  String
+                </td>
+                <td className="font-normal px-5 py-3 text-sm">
+                  Your teams unique id
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
