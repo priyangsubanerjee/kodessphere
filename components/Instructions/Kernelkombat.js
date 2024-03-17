@@ -12,12 +12,11 @@ function Kernelkombat() {
           creativity, and speed in solving a range of problems from easy to
           hard.
         </p>
-        <p className="mt-3">
-          Many APIs provide access to valuable data that developers can use in
-          their applications. This could include things like weather data, stock
-          prices, or demographic information. By using APIs, developers can
-          create applications that are more informative and insightful.
-        </p>
+        <ul className="mt-3 pl-4 list-disc">
+          <li>3 Problem statements</li>
+          <li>10:00am to 4:30pm</li>
+          <li>Solve as many problems as you can</li>
+        </ul>
       </div>
       <div className="mt-12">
         <h2 className="font-semibold text-neutral-800 text-base">
