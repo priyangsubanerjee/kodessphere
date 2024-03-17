@@ -28,6 +28,8 @@ function Form() {
   const db = getFirestore(app);
 
   const handleSubmit = async () => {
+    toast.loading("Checking permission");
+
     let eventStarted = await axios.get("/permissions/event-started");
     console.log(eventStarted.data);
     if (eventStarted.data.success) {
@@ -37,6 +39,7 @@ function Form() {
       }
     }
 
+    toast.remove();
     setLoading(true);
     toast.loading("Checking team presence...");
 
