@@ -91,6 +91,9 @@ function RaiseHand() {
             <SelectItem value="LH-303" key="LH-303">
               LH-303
             </SelectItem>
+            <SelectItem value="LH-307" key="LH-307">
+              LH-307
+            </SelectItem>
             <SelectItem value="LH-304" key="LH-304">
               LH-304
             </SelectItem>
