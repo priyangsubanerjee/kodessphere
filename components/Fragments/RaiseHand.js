@@ -85,16 +85,16 @@ function RaiseHand() {
             label="Select room"
             className="w-full"
           >
-            <SelectItem value="LH-301" key="LH-301">
+            <SelectItem value="LH-302" key="LH-302">
               LH-302
             </SelectItem>
-            <SelectItem value="LH-302" key="LH-302">
+            <SelectItem value="LH-303" key="LH-303">
               LH-303
             </SelectItem>
-            <SelectItem value="LH-303" key="LH-303">
+            <SelectItem value="LH-304" key="LH-304">
               LH-304
             </SelectItem>
-            <SelectItem value="LH-303" key="LH-303">
+            <SelectItem value="LH-301" key="LH-301">
               WL-301
             </SelectItem>
           </Select>
