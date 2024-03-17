@@ -193,7 +193,7 @@ function Konnexweb() {
         </div>
 
         <h2 className="font-semibold text-neutral-800 text-base mt-12">
-          Get your devices
+          Get updated device status
         </h2>
         <div className="p-6 bg-white mt-4 border border-neutral-200 rounded-lg">
           <div className="flex items-center">
