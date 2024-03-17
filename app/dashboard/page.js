@@ -39,11 +39,6 @@ const metadata = {
 };
 
 function Dashboard() {
-  useEffect(() => {
-    document.title = metadata.title;
-    //add favicon
-    document.querySelector("link[rel='icon']").href = metadata.icons.icon;
-  }, []);
   return (
     <div className="flex max-h-screen h-screen bg-neutral-50">
       <Sidenav />
