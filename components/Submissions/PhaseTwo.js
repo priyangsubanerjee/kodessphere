@@ -17,8 +17,7 @@ function PhaseTwo() {
           </span>
         </h1>
         <p className="text-sm mt-3 text-neutral-700">
-          Logical thinking and problem-solving skills are the key to success in
-          this phase.
+          Techincal submission for phase two of the hackathon.
         </p>
       </div>
       {session.data?.user?.arena === "Konnexweb" ? (
