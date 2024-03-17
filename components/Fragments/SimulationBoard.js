@@ -122,6 +122,23 @@ function SimulationBoard({ tid }) {
             readOnly
           />
         </div>
+        <div className="bg-white border p-5 rounded-lg">
+          <h2 className="font-semibold">Air conditioner</h2>
+          <p className="text-sm mt-2">Control state & temp of Ac</p>
+          <img className="h-12 mt-4" src={devicesProps[3].icon} alt="" />
+          <Input
+            className="mt-5"
+            label="State"
+            value={devices ? (devices.ac.state == 0 ? "Off" : "On") : ""}
+            readOnly
+          />
+          <Input
+            className="mt-2"
+            label="Temperature"
+            value={devices ? devices.ac.temp : ""}
+            readOnly
+          />
+        </div>
       </div>
     </div>
   );

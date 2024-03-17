@@ -64,7 +64,7 @@ function Form() {
             message: "",
             ac: {
               state: 0,
-              temp: 0,
+              temp: 23,
             },
           });
           toast.dismiss();
