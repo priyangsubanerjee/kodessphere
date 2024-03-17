@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import { Button, Input } from "@nextui-org/react";
 import Image from "next/image";
 import { initializeApp } from "firebase/app";
@@ -14,7 +15,6 @@ import random from "random-string-generator";
 import React from "react";
 import Form from "@/components/Form";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
 
 export const metadata = {
   title: "Ultimate hackathon, Kodessphere - Konnexions",

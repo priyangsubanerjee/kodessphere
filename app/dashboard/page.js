@@ -10,7 +10,7 @@ import React, { useContext, useEffect } from "react";
 
 export const dynamic = "force-dynamic";
 
-function Dashboard() {
+function DashboardPage() {
   return (
     <div className="flex max-h-screen h-screen bg-neutral-50">
       <Sidenav />
@@ -19,6 +19,4 @@ function Dashboard() {
   );
 }
 
-export const revalidate = 1;
-
-export default Dashboard;
+export default DashboardPage;

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 import GlobalState from "@/context/GlobalStates";
 import { Icon } from "@iconify/react";
 import { Button } from "@nextui-org/react";
