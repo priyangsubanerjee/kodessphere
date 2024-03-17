@@ -24,3 +24,24 @@ export const SubmitPhaseTwo = async (id, name, arena, gmail, content) => {
     };
   }
 };
+
+export const GetPhaseTwoSubmissions = async (arena) => {
+  try {
+    const phaseTwo = await prisma.phaseTwo.findMany({
+      where: {
+        arena: arena,
+      },
+    });
+
+    return {
+      success: true,
+      data: phaseTwo,
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      success: false,
+      message: "Failed to fetch phase one data",
+    };
+  }
+};
