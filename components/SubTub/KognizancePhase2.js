@@ -82,7 +82,7 @@ function KognizancePhase2() {
           onClick={() => handleSubmit()}
           className="rounded-md h-fit text-white bg-black disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <div className="px-3 py-3 block">Submit phase 1</div>
+          <div className="px-3 py-3 block">Submit phase 2</div>
         </Button>
       </div>
     </div>
