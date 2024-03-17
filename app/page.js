@@ -16,8 +16,6 @@ import Form from "@/components/Form";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 
-const app = initializeApp(firebaseConfig);
-
 export const metadata = {
   title: "Ultimate hackathon, Kodessphere - Konnexions",
   description:
@@ -47,8 +45,6 @@ export const metadata = {
 };
 
 export default function Home() {
-  const db = getFirestore(app);
-
   return (
     <div className="pt-20 lg:pt-24 ">
       <div className="relative">
