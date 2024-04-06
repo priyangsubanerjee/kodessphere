@@ -9,7 +9,9 @@ export async function middleware(req) {
 
   if (req.nextUrl.pathname === "/") {
     if (session) {
-      return NextResponse.redirect(new URL("/dashboard", req.url));
+      return NextResponse.redirect(
+        new URL("/participation-certificate", req.url)
+      );
     } else {
       return NextResponse.next();
     }
@@ -17,7 +19,9 @@ export async function middleware(req) {
     if (session) {
       return NextResponse.next();
     } else {
-      return NextResponse.redirect(new URL("/", req.url));
+      return NextResponse.redirect(
+        new URL("/participation-certificate", req.url)
+      );
     }
   }
 }

@@ -15,6 +15,8 @@ export const GetTeam = async (id) => {
         team: {
           name: team.name,
           arena: team.arena,
+          gmail: team.gmail,
+          members: team.members,
         },
       };
     } else {
