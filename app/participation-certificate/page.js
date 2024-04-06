@@ -92,7 +92,8 @@ function Certificate() {
               </p>
             </div>
           </div>
-          <div className="md:w-[500px] max-w-[500px] bg-white relative mt-10 border rounded-2xl mx-auto p-6">
+
+          <div className="md:w-[500px] max-w-[500px] bg-white relative mt-10 border rounded-2xl mx-5 md:mx-auto p-6">
             <div>
               <label className="text-sm text-neutral-500" htmlFor="">
                 Enter registered team id
